@@ -80,7 +80,9 @@ def init():
                "You're the reason birth control exists",
                "almost penta (¬_¬)",
                "jg more diff than my K/D",
-               "you play like if a hemorrhoid was brought to life"]
+               "you play like if a hemorrhoid was brought to life",
+               "Your family tree is a circle",
+               "go 0/1 irl"]
 
     Rinsults = ["Taste my juices",
                 "You are so bad",
