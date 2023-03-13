@@ -1,7 +1,20 @@
+# How to use:
+# 1. set up keybinds how u want (↓)
+# 2. start the script whenever you want
+# 3. press `startFlameKey` (preferably at the start of game)
+# 4. your flame is ready just press `flameKey` and enjoy (¬‿¬)
+
+# ==================== OPTIONS ====================
+startFlameKey = '='
+flameKey = '*'
+ultiFlameKey = 'R'
+# =================================================
+
 from pynput import keyboard
 import keyboard as flame
 import time
 import random
+
 
 insults = []
 Rinsults = []
@@ -17,17 +30,17 @@ def on_press(key):
     except:
         k = key.name  # other keys
 
-    if k in ['*']: # default insults
+    if k in [flameKey]: # default insults
         global kys1
         kys1 = True
         return False
-    if k in ['r']: # default insults
+    if k in [ultiFlameKey]: # insults when ulting
         global kys2
         global Rflame
         kys1 = True
         Rflame = True
         return False
-    elif k in ['=']:  # reset insults
+    elif k in [startFlameKey]:  # reset insults
         global kys2
         kys2 = True
         return False
@@ -82,7 +95,9 @@ def init():
                "jg more diff than my K/D",
                "you play like if a hemorrhoid was brought to life",
                "Your family tree is a circle",
-               "go 0/1 irl"]
+               "go 0/1 irl",
+               "You should get a personal tree just to replace the oxygen you wasted breathing",
+               "You are so ugly your birth certificate is a restraining order from mirrors"]
 
     Rinsults = ["Taste my juices",
                 "You are so bad",
