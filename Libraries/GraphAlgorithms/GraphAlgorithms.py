@@ -46,27 +46,18 @@ class Graph():
         return s
 
     # --------------------------------- ADD/REMOVE EDGE ---------------------------------
-    # add unweighted edge
-    def add_edge(self, a: int, b: int) -> None:
-        self.verticies[a].append(Edge(b))
-        if not self.isDirected: # reverse the direction
-            self.verticies[b].append(Edge(a))
-
-
-    # add weighted edge
     def add_edge(self, a: int, b: int, weight: int = 1) -> None:
         self.verticies[a].append(Edge(b, weight))
         if not self.isDirected: # reverse the direction
             self.verticies[b].append(Edge(a, weight))
 
 
-    # delete edge ༼ つ ◕_◕ ༽つ
     def delete_edge(self, a: int, b: int) -> None:
         for edge in self.verticies[a]:
             if edge.vertex == b: 
                 self.verticies[a].remove(edge)
         
-        if not self.isDirected:
+        if not self.isDirected: # delete reverse as well
             for edge in self.verticies[b]:
                 if edge.vertex == a: 
                     self.verticies[b].remove(edge)
