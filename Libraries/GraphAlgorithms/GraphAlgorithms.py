@@ -5,13 +5,6 @@ class Edge:
     vertex: int
     weight: int
 
-
-    # unweighted graph
-    def __init__(self, v: int):
-        self.vertex = v
-        self.weight = 1
-
-
     # weighted graph
     def __init__(self, v: int, w: int):
         self.vertex = v
@@ -23,7 +16,6 @@ class Graph():
     vertex_count: int           # number of verticies
     isDirected: bool            # wherther a graph is directed or not
     verticies: List[List[Edge]] # the structure of the graph
-    #visited: List[bool]          # visited verticies (used in search algorithms)
 
 
     # constructor
@@ -57,7 +49,7 @@ class Graph():
             if edge.vertex == b: 
                 self.verticies[a].remove(edge)
         
-        if not self.isDirected: # delete reverse as well
+        if not self.isDirected: # delete opposite direction as well
             for edge in self.verticies[b]:
                 if edge.vertex == a: 
                     self.verticies[b].remove(edge)
