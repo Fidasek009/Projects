@@ -2,7 +2,7 @@
 
 ## Creating a Graph
 
-### Simple undirected graph from JSON format
+### Simple undirected graph with 4 vertices
 **method one:**
 ```
 graph1 = {
@@ -26,7 +26,7 @@ g.add_edge(2, 3)
 g.add_edge(3, 0)
 ```
 
-### A directed and weighted graph with 4 verticies
+### A directed and weighted graph with 4 vertices
 **method one:**
 ```
 graph2 = {
@@ -50,3 +50,16 @@ g.add_edge(2, 3, 6)
 g.add_edge(3, 0, 4)
 ```
 
+## Different algorithms
+
+### Breadth-first search (BFS)
+Used for finding the shortest path in an unweighted graph
+![BFS](https://commons.wikimedia.org/wiki/File:Animated_BFS.gif#/media/File:Animated_BFS.gif)
+
+### Depth-first search (DFS)
+Used for searching trees
+![DFS](https://commons.wikimedia.org/wiki/File:Depth-First-Search.gif#/media/File:Depth-First-Search.gif)
+
+### Dijkstra's algorithm
+Used for finding the shortest path in a weighted graph
+![kys](https://commons.wikimedia.org/wiki/File:Dijkstra_Animation.gif#/media/File:Dijkstra_Animation.gif)
