@@ -54,12 +54,12 @@ g.add_edge(3, 0, 4)
 
 ### Breadth-first search (BFS)
 Used for finding the shortest path in an unweighted graph
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif" width="150" height="150">
+<br><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif" width="250" height="250">
 
 ### Depth-first search (DFS)
 Used for searching trees
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" width="150" height="150">
+<br><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" width="250" height="250">
 
 ### Dijkstra's algorithm
 Used for finding the shortest path in a weighted graph
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" width="150" height="150">
+<br><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" width="250" height="250">
