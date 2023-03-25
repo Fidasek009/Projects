@@ -53,8 +53,8 @@ g.add_edge(3, 0, 4)
 ## Different algorithms
 
 ### Breadth-first search (BFS)
-Used for finding the shortest path in an unweighted graph
-<br><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif" width="250" height="250">
+Used for finding the shortest path a maze
+<br><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif" width="250" height="250">
 
 ### Depth-first search (DFS)
 Used for searching trees
