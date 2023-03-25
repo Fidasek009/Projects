@@ -50,16 +50,28 @@ g.add_edge(2, 3, 6)
 g.add_edge(3, 0, 4)
 ```
 
-## Different algorithms
+
+## Search algorithms
+They all return a path from point **A** to point **B**.
+If it returns `[]` then the path doesn't exist
 
 ### Breadth-first search (BFS)
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif" width="250" height="250"><br>
 Used for finding the shortest path a maze
-<br><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif" width="250" height="250">
+```
+g.BFS(0, 3)
+```
 
 ### Depth-first search (DFS)
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" width="250" height="250"><br>
 Used for searching trees
-<br><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" width="250" height="250">
+```
+g.DFS(0, 3)
+```
 
 ### Dijkstra's algorithm
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" width="250" height="250"><br>
 Used for finding the shortest path in a weighted graph
-<br><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif" width="250" height="250">
+```
+g.Dijkstra(0, 3)
+```
