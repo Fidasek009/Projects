@@ -1,8 +1,8 @@
-## How to use:
+# How to use:
 
-### Creating a Graph
+## Creating a Graph
 
-#### Simple undirected graph from JSON format
+### Simple undirected graph from JSON format
 **method one:**
 ```
 graph1 = {
@@ -13,7 +13,6 @@ graph1 = {
 }
 
 g = Graph(graph1)
-
 ```
 **method two:**
 ```
@@ -27,7 +26,7 @@ g.add_edge(2, 3)
 g.add_edge(3, 0)
 ```
 
-#### A directed and weighted graph with 4 verticies
+### A directed and weighted graph with 4 verticies
 **method one:**
 ```
 graph2 = {
@@ -38,7 +37,6 @@ graph2 = {
 }
 
 g = Graph(graph2, isDirected=True)
-
 ```
 **method two:**
 ```
