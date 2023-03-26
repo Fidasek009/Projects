@@ -160,7 +160,6 @@ class Graph():
                     tree[edge.vertex] = v
                     queue.append(edge.vertex)
         
-        print(distance)
         return tree
 
 
