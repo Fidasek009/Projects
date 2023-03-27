@@ -78,9 +78,7 @@ def coolMaze(maze: str) -> str:
 
     return s
 
-
-if __name__ == "__main__":
-
+def main():
     maze: List[List[chr]] = []
 
     # load maze
@@ -96,6 +94,11 @@ if __name__ == "__main__":
 
     # find shortest path with BFS and draw it out
     print(coolMaze(mazeObj.drawPath()))
+
+    
+if __name__ == "__main__":
+    main()
+    
 
 """
 INPUT EXAMPLES:
