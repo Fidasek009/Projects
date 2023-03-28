@@ -22,9 +22,9 @@ void countChars() //from file to array of character counts in ASCII indexes
 
     while (!readFile.eof()) // keep reading until end-of-file
     {
-        char* char_arr = {};    //============================
+        char* char_arr = {};    //----------------------------
         string str_obj(input);  //convert string to char array
-        char_arr = &str_obj[0]; //============================
+        char_arr = &str_obj[0]; //----------------------------
 
         for (int i = 0; i < sizeof(char_arr); i++) //goes through char array and counts chars
         {
