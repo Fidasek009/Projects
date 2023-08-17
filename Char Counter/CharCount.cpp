@@ -1,74 +1,67 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-using namespace std;
+#include <queue>
 
-//=============================================== INPUT ==================================================
+// ========================= INPUT =========================
 
-string inptxtfile = "input.txt"; //read from this file
+// count chars in this file
+std::string INP = "input.txt";
+// write char counts to this file
+std::string OUT = "output.txt";
 
-string outtxtfile = "output.txt"; //output char count in this file
+// ========================= COUNTER =========================
 
-//=============================================== COUNTER ==================================================
+int CHARS[256] = {0};
 
-string input;
-int charcount [256];
-ifstream readFile;
-ofstream writeFile;
-
-void countChars() //from file to array of character counts in ASCII indexes
-{
-    readFile >> input;
-
-    while (!readFile.eof()) // keep reading until end-of-file
-    {
-        char* char_arr = {};    //----------------------------
-        string str_obj(input);  //convert string to char array
-        char_arr = &str_obj[0]; //----------------------------
-
-        for (int i = 0; i < sizeof(char_arr); i++) //goes through char array and counts chars
-        {
-            if ((int)char_arr[i] < 256) charcount[(int)char_arr[i]]++;
-            else cout << "Invalid character: " << char_arr[i] << endl;//char isn't in UTF-8 (probably)
-        }
-
-        //cout << input << endl; //uncomment if you want to write out individual lines of text file
-
-        readFile >> input; //sets EOF flag if no value found (idk what that really means :p)
+// from file to array of character counts in ASCII indexes
+void countChars(std::string filePath) { 
+    // open file
+    std::ifstream inFile(filePath);
+    if (!inFile) { 
+        std::cerr << "Input file could not be opened." << std::endl;
+        exit(1);
     }
+
+    // read file and count chars
+    std::string buffer;
+    while(std::getline(inFile, buffer))
+        for(char &c : buffer)
+            if(c < 256 && c > 0)
+                CHARS[c]++;
+    
+    inFile.close();
 }
 
-void writeChars() //write out the count of each char (by converting from ASCII)
-{
-    writeFile.open(outtxtfile);
-    for (int i = 1; i < 256; i++)
-    {
-        if (charcount[i] > 0)//skip empty indexes
-        {
-            cout << charcount[i] << " - " << char(i) << endl;
-            writeFile << charcount[i] << " - " << char(i) << endl;
-        }
+// write out the count of each char (by converting from ASCII)
+void writeChars(std::string filePath) {
+    // sort chars by count
+    std::priority_queue<std::pair<int, char>> pq;
+    for(int i = 1; i < 256; i++) {
+        // only push non-zero indexes
+        if (CHARS[i] > 0) pq.push(std::pair(CHARS[i], i));
     }
-    writeFile.close();
+
+    // open file
+    std::ofstream outFile(filePath);
+    if (!outFile) { 
+        std::cerr << "Output file could not be opened." << std::endl;
+        exit(1);
+    }
+
+    // write to file
+    while(!pq.empty()) {
+        std::cout << pq.top().first << " - '" << pq.top().second << "'" << std::endl;
+        outFile << pq.top().first << " - '" << pq.top().second << "'" << std::endl;
+        pq.pop();
+    }
+
+    outFile.close();
 }
 
 int main()
 {
-    readFile.open(inptxtfile); //open the file
-
-    if (!readFile) //file couldn't be opened
-    { 
-        cerr << "Error: file could not be opened" << endl;
-        exit(1);
-    }
-
-    countChars();
-    writeChars();
-
-    readFile.close();
+    countChars(INP);
+    writeChars(OUT);
     return 0;
 }
-//TODO:
-/*
-    ? rockyou.txt - not counting all chars ?
-*/
